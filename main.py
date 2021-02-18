@@ -5,7 +5,7 @@ import pandas
 base_dir = "/Users/simone/CLionProjects/Midterm_Parallel_Computing_K-means/output/"
 
 
-def plot_k_means_iteration(k, iteration):
+def plot_k_means_iteration(k, iteration=9001):
     df_dataset = pandas.read_csv(base_dir + 'k' + str(k) + 'iteration' + str(iteration) + '.csv', header=None)
     df_centroids = pandas.read_csv(base_dir + 'k' + str(k) + 'centroids' + str(iteration) + '.csv', header=None)
 
@@ -23,4 +23,5 @@ def plot_k_means_iteration(k, iteration):
     plt.show()
 
 
-plot_k_means_iteration(6, 5)
+for i in range(2, 11):
+    plot_k_means_iteration(i)
