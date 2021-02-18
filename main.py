@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import pandas
 
-base_dir = "/Users/simone/CLionProjects/Midterm_Parallel_Computing_K-means/output/"
+base_dir = "D:/JetBrains/Projects/CLion/Kmeans/output/"
 
 
 def plot_k_means_iteration(k, iteration):
@@ -19,8 +19,10 @@ def plot_k_means_iteration(k, iteration):
         plt.scatter(cluster[i].iloc[:, 0], cluster[i].iloc[:, 1])
 
     plt.scatter(df_centroids.iloc[:, 0], df_centroids.iloc[:, 1], marker='*', c='black')
-
+    plt.grid()
+    plt.gca().set_aspect('equal', adjustable='box')
     plt.show()
 
 
-plot_k_means_iteration(6, 5)
+for j in range(2):
+    plot_k_means_iteration(3, j)
